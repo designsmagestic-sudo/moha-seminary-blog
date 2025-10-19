@@ -1,0 +1,336 @@
+/* =================================================================
+   1. GLOBAL STYLES & RESET
+   ================================================================= */
+   :root {
+    /* Passionist Color Palette */
+    --color-primary-dark: #1f1f1f;   /* Deep Black / Habit Color */
+    --color-secondary-red: #8f001a; /* Passion Red (for CTAs/Accents) */
+    --color-accent-gold: #cfae6a;    /* Subtle Gold (for distinction) */
+    --color-background-light: #f9f9f9;
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+
+    /* Typography */
+    --font-heading: 'Georgia', serif; 
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--color-secondary-red);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =================================================================
+   2. HEADER & NAVIGATION STYLES (templates/header.html)
+   ================================================================= */
+#main-header {
+    background-color: var(--color-primary-dark);
+    padding: 15px 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Site Title and Description */
+.site-branding .site-title a {
+    color: var(--color-text-light);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-branding .site-description {
+    color: var(--color-accent-gold);
+    font-size: 0.85em;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Navigation Links */
+#main-navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-navigation ul li {
+    margin-left: 25px;
+}
+
+#main-navigation ul li a {
+    color: var(--color-text-light);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+#main-navigation ul li a:hover {
+    color: var(--color-accent-gold);
+    text-decoration: none;
+}
+
+/* Call to Action Buttons */
+.header-cta .button {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.cta-support { /* Primary Action: Support */
+    background-color: var(--color-secondary-red);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-secondary-red);
+}
+
+.cta-support:hover {
+    background-color: #a80022; /* Darker red on hover */
+    text-decoration: none;
+}
+
+.cta-location { /* Secondary Action: Location */
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+}
+
+.cta-location:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+/* =================================================================
+   3. HERO SECTION STYLES (index.html)
+   ================================================================= */
+#hero-banner {
+    background: url('../images/arusha-seminary-bg.jpg') no-repeat center center/cover; /* Placeholder image path */
+    background-color: #333; /* Fallback */
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 30px;
+}
+
+.hero-text h2 {
+    color: var(--color-text-light);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.hero-cta {
+    background-color: var(--color-accent-gold);
+    color: var(--color-primary-dark) !important;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero-cta:hover {
+    background-color: #f7d187;
+    text-decoration: none;
+}
+
+
+/* =================================================================
+   4. MAIN LAYOUT GRID (index.html)
+   ================================================================= */
+#main-layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two-thirds content, one-third sidebar */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
+}
+
+#content-feed {
+    padding-right: 20px;
+}
+
+/* Post Summary Styles */
+.post-summary {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+}
+
+.post-summary h3 {
+    font-size: 1.5em;
+}
+
+.post-summary .excerpt {
+    margin: 10px 0;
+}
+
+.post-summary .metadata {
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* =================================================================
+   5. SIDEBAR STYLES (The Calendar and Widgets)
+   ================================================================= */
+#sidebar .widget {
+    background-color: var(--color-text-light);
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+#sidebar h3 {
+    border-bottom: 2px solid var(--color-secondary-red);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: var(--color-primary-dark);
+}
+
+.passionist-calendar-widget ul {
+    list-style: none;
+}
+
+.passionist-calendar-widget ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.sidebar-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.sidebar-cta.primary {
+    background-color: var(--color-secondary-red);
+    color: var(--color-text-light) !important;
+}
+
+.sidebar-cta.primary:hover {
+    background-color: #a80022;
+}
+
+/* =================================================================
+   6. FOOTER STYLES (templates/footer.html)
+   ================================================================= */
+#main-footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    padding: 40px 5%;
+    margin-top: 40px;
+}
+
+.footer-widgets-area {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+}
+
+.footer-widget {
+    width: 30%; /* Space out the 3 columns */
+}
+
+#main-footer h4 {
+    color: var(--color-accent-gold);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#main-footer a {
+    color: #ccc;
+}
+
+#main-footer a:hover {
+    color: var(--color-accent-gold);
+}
+
+#main-footer ul {
+    list-style: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+
+/* =================================================================
+   7. RESPONSIVENESS (Mobile Adjustments)
+   ================================================================= */
+@media (max-width: 900px) {
+    #main-layout-grid {
+        grid-template-columns: 1fr; /* Stack content and sidebar */
+    }
+
+    .header-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-navigation ul {
+        flex-direction: column;
+        margin: 15px 0;
+        align-items: center;
+    }
+
+    #main-navigation ul li {
+        margin: 5px 0;
+    }
+    
+    .footer-widgets-area {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-widget {
+        width: 100%;
+    }
+}
